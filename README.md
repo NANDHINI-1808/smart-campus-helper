@@ -16,9 +16,6 @@
 - Login with email/password or social login buttons (Google, GitHub, Facebook – simulated).
 - After login, you can select features from the menu.
 
-## Live Demo
-
-[Your GitHub Pages URL or Netlify/Vercel link here]
 
 ## How to Run Locally
 
@@ -40,5 +37,5 @@
 
 ## Author
 
-Your Name  
-Contact: your-email@example.com
+Nandhini Murugesam
+Contact: bharaninandhini48@gmail.com
