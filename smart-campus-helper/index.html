@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Campus Helper v2</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{font-family:sans-serif;background:#f0f2f5;margin:0;padding:0;}
+    .welcome,.menuPage,.featureCard{padding:20px;text-align:center;}
+    input, textarea, button{margin:5px; padding:8px; font-size:16px;}
+    .card{border:1px solid #ccc; padding:15px; margin:10px; border-radius:8px;}
+    .grid{display:flex; flex-wrap:wrap; justify-content:center;}
+  </style>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="welcome">
+  <h1>🎓 Smart Campus Helper v2</h1>
+  <p>Login to continue</p>
+
+  <!-- Email login -->
+  <input type="email" id="email" placeholder="Email"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="loginWithEmail()">Login</button>
+  <button onclick="signupWithEmail()">Sign Up</button>
+
+  <p>Or continue with:</p>
+  <button onclick="loginWithGoogle()">Google</button>
+  <button onclick="loginWithGitHub()">GitHub</button>
+  <button onclick="loginWithFacebook()">Facebook</button>
+</div>
+
+<!-- MENU PAGE -->
+<div id="menuPage" class="menuPage" style="display:none;">
+  <h2>Welcome!</h2>
+  <p>Select a feature:</p>
+  <button onclick="openFeature('complaints')">📢 Complaints</button>
+  <button onclick="openFeature('lost')">🔍 Lost & Found</button>
+  <button onclick="openFeature('inter')">🌐 Inter-College Events</button>
+  <button onclick="openFeature('intra')">🏫 Intra-College Events</button>
+  <button onclick="openFeature('notes')">📝 Notes Maker</button>
+  <button onclick="openFeature('chat')">💬 Chat with Friends</button>
+</div>
+
+<!-- FEATURE PANELS -->
+<div id="featurePanels" style="display:none;">
+  <!-- Complaints -->
+  <div id="complaintsCard" class="card" style="display:none;">
+    <h2>📢 Complaints</h2>
+    <input type="text" id="input" placeholder="Enter complaint"><br>
+    <button onclick="addComplaint()">Submit</button>
+    <button onclick="readComplaints()">🔊 Speak Complaints</button>
+    <button onclick="showMenu()">⬅ Back to Menu</button>
+    <ul id="list"></ul>
+  </div>
+
+  <!-- Lost & Found -->
+  <div id="lostCard" class="card" style="display:none;">
+    <h2>🔍 Lost & Found</h2>
+    <input type="text" id="lostInput" placeholder="Enter lost item"><br>
+    <button onclick="addLost()">Post</button>
+    <button onclick="readLost()">🔊 Speak Lost Items</button>
+    <button onclick="showMenu()">⬅ Back to Menu</button>
+    <ul id="lostList"></ul>
+  </div>
+
+  <!-- Inter-College Events -->
+  <div id="interCard" class="card" style="display:none;">
+    <h2>🌐 Inter-College Events</h2>
+    <textarea id="interEvents" placeholder="Event Name | Date | Location | Description, one per line"></textarea><br>
+    <button onclick="saveInterEvents()">Save</button>
+    <button onclick="readInterEvents()">🔊 Speak Events</button>
+    <button onclick="showMenu()">⬅ Back to Menu</button>
+    <ul id="interList"></ul>
+  </div>
+
+  <!-- Intra-College Events -->
+  <div id="intraCard" class="card" style="display:none;">
+    <h2>🏫 Intra-College Events</h2>
+    <textarea id="intraEvents" placeholder="Event Name | Date | Location | Description, one per line"></textarea><br>
+    <button onclick="saveIntraEvents()">Save</button>
+    <button onclick="readIntraEvents()">🔊 Speak Events</button>
+    <button onclick="showMenu()">⬅ Back to Menu</button>
+    <ul id="intraList"></ul>
+  </div>
+
+  <!-- Notes Maker -->
+  <div id="notesCard" class="card" style="display:none;">
+    <h2>📝 Notes Maker</h2>
+    <textarea id="notesInput" placeholder="Write your notes here..."></textarea><br>
+    <button onclick="saveNotes()">Save Notes</button>
+    <button onclick="readNotes()">🔊 Speak Notes</button>
+    <button onclick="showMenu()">⬅ Back to Menu</button>
+    <ul id="notesList"></ul>
+  </div>
+
+  <!-- Chat with Friends -->
+  <div id="chatCard" class="card" style="display:none;">
+    <h2>💬 Chat with Friends</h2>
+    <input type="text" id="friendInput" placeholder="Enter message"><br>
+    <button onclick="sendMessage()">Send</button>
+    <button onclick="readChat()">🔊 Speak Chat</button>
+    <button onclick="showMenu()">⬅ Back to Menu</button>
+    <ul id="chatList"></ul>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
